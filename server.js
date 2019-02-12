@@ -14,4 +14,5 @@ server.get('/', (req, res) => {
   `);
 });
 
-module.exports = server;
+module.exports = server; // CommonJS way of exporting out of a module
+// this is equivalent to: export default server; for ES2015 modules
