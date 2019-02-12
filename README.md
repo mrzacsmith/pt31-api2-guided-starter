@@ -1,5 +1,7 @@
 # webapi-chat-solution
 
+## **Work in Progress**
+
 Guided project for **Web API II** Module.
 
 Starter code is here: [Web API Chat Guided Project](https://github.com/LambdaSchool/webapi-chat).
@@ -9,8 +11,6 @@ In this project we will learn how to create a Web API using `Node.js` and `Expre
 ## Prerequisites
 
 - [Postman](https://www.getpostman.com/downloads/) installed.
-
-**Work in Progress**
 
 ## Starter Code
 
