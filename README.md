@@ -254,6 +254,28 @@ router.get('/:id/messages', async (req, res) => {
 
 **wait for students to catch up, use a `yes/no` poll to let students tell you when they are done**
 
+### You Do (estimated 5m to complete)
+
+Ask student to write and endpoint to new message to a hub.
+
+A possible solution using sub-routes:
+
+```js
+router.post('/:id/messages', async (req, res) => {
+  const messageInfo = { ...req.body, hub_id: req.params.id };
+  try {
+    const message = await Hubs.addMessage(messageInfo);
+    res.status(201).json(message);
+  } catch (error) {
+    // log error to database
+    console.log(error);
+    res.status(500).json({
+      message: 'Error adding the message',
+    });
+  }
+});
+```
+
 ## Gotcha, show if time permits
 
 Sometimes the following error displays in the console `Cannot set header after they are sent to the client`.
@@ -291,25 +313,3 @@ if (hub) {
 ```
 
 **wait for students to catch up, use a `yes/no` poll to let students tell you when they are done**
-
-### You Do (estimated 5m to complete)
-
-Ask student to write and endpoint to new message to a hub.
-
-A possible solution using sub-routes:
-
-```js
-router.post('/:id/messages', async (req, res) => {
-  const messageInfo = { ...req.body, hub_id: req.params.id };
-  try {
-    const message = await Hubs.addMessage(messageInfo);
-    res.status(201).json(message);
-  } catch (error) {
-    // log error to database
-    console.log(error);
-    res.status(500).json({
-      message: 'Error adding the message',
-    });
-  }
-});
-```
