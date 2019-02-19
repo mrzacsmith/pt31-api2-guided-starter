@@ -146,13 +146,6 @@ server.use('/api/hubs', hubsRouter); // add this line to use the router
 
 **wait for students to catch up, use a `yes/no` poll to let students tell you when they are done**
 
-## Sub-Routes or Sub-Applications
-
-- a message has: id, hubId, senderName and text.
-- add sub-routes for messages.
-- you do: add post to messages
-- you do: find
-
 ## Reading Query String Parameters
 
 We have covered how to receive data from the client using the request `body` and `url parameters`. Now we'll explore another way to accept data from the client.
@@ -298,3 +291,25 @@ if (hub) {
 ```
 
 **wait for students to catch up, use a `yes/no` poll to let students tell you when they are done**
+
+### You Do (estimated 5m to complete)
+
+Ask student to write and endpoint to new message to a hub.
+
+A possible solution using sub-routes:
+
+```js
+router.post('/:id/messages', async (req, res) => {
+  const messageInfo = { ...req.body, hub_id: req.params.id };
+  try {
+    const message = await Hubs.addMessage(messageInfo);
+    res.status(201).json(message);
+  } catch (error) {
+    // log error to database
+    console.log(error);
+    res.status(500).json({
+      message: 'Error adding the message',
+    });
+  }
+});
+```
