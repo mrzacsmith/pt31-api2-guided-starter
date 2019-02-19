@@ -5,7 +5,7 @@ const hubsRouter = require('./hubs/hubs-router.js');
 const server = express();
 
 server.use(express.json());
-server.use('/api/hubs', hubsRouter);
+server.use('/api/hubs', hubsRouter); //delegate requests to /api/hubs to the router
 
 server.get('/', (req, res) => {
   res.send(`
