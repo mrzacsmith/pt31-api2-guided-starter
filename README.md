@@ -2,7 +2,7 @@
 
 Guided project for **Web API II** Module.
 
-Starter code is here: [Web API Chat Guided Project](https://github.com/LambdaSchool/webapi-chat).
+Starter code is here: [Web API II Guided Project](https://github.com/LambdaSchool/webapi-ii-guided).
 
 In this project we will learn how to create a Web API using `Node.js` and `Express`.
 
