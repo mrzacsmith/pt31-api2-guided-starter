@@ -2,8 +2,6 @@
 
 Guided project for **Web API II** Module.
 
-Starter code is here: [Web API II Guided Project](https://github.com/LambdaSchool/webapi-ii-guided).
-
 In this project we will learn how to create a Web API using `Node.js` and `Express`.
 
 ## Prerequisites
@@ -12,7 +10,7 @@ In this project we will learn how to create a Web API using `Node.js` and `Expre
 
 ## Starter Code
 
-The [Starter Code](https://github.com/LambdaSchool/webapi-chat) for this project is configured to run the server by typing `yarn server` or `npm run server`. The server will restart automatically on changes.
+The [Starter Code](https://github.com/LambdaSchool/webapi-ii-guided) for this project is configured to run the server by typing `yarn server` or `npm run server`. The server will restart automatically on changes.
 
 Data for the API will be stored in a database and will persist across server restarts.
 
