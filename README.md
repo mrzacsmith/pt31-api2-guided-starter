@@ -1,8 +1,8 @@
-# webapi-chat-solution
+# Web API II Guided Project
 
-Guided project for **Web API II** Module.
+Guided project for **Web API II** module.
 
-In this project we will learn how to create a Web API using `Node.js` and `Express`.
+In this project we will learn how to create a very simple Web API using `Node.js` and `Express`, and cover how to use `Express Routers` to break up the application to make it more maintainable.
 
 ## Prerequisites
 
@@ -14,7 +14,7 @@ The [Starter Code](https://github.com/LambdaSchool/webapi-ii-guided) for this pr
 
 Data for the API will be stored in a database and will persist across server restarts.
 
-## How to Use this Repository
+## How to Contribute
 
 - clone the [starter code](https://github.com/LambdaSchool/webapi-i-guided).
 - create a solution branch: `git checkout -b solution`.
