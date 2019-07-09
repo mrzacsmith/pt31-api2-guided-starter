@@ -10,7 +10,7 @@ In this project we will learn how to create a very simple Web API using `Node.js
 
 ## Starter Code
 
-The [Starter Code](https://github.com/LambdaSchool/webapi-ii-guided) for this project is configured to run the server by typing `yarn server` or `npm run server`. The server will restart automatically on changes.
+The [Starter Code](https://github.com/LambdaSchool/webapi-ii-guided) for this project is configured to run the server by typing `npm run server`. The server will restart automatically on changes.
 
 Data for the API will be stored in a database and will persist across server restarts.
 
@@ -50,8 +50,8 @@ We start by separating the creation and configuration of our server from startin
 
 ## Exporting Modules the CommonJS Way
 
-- make sure to download all dependencies with `yarn` or `npm i`.
-- use `yarn server` or `npm run server` to run the API and visit `/api/hubs` to make sure it's working.
+- make sure to download all dependencies with `npm i`.
+- use `npm run server` to run the API and visit `/api/hubs` to make sure it's working.
 - add a new `server.js` file.
 - move the server creation and configuration, including middleware and routes to that file.
 - make sure to export the server at the bottom: `module.exports = server`. Explain that this is the `CommonJS` way of exporting modules.
