@@ -16,9 +16,9 @@ Data for the API will be stored in a database and will persist across server res
 
 ## How to Contribute
 
-- clone the [starter code](https://github.com/LambdaSchool/webapi-i-guided).
+- clone the [starter code](https://github.com/LambdaSchool/webapi-ii-guided).
 - create a solution branch: `git checkout -b solution`.
-- add this repository as a remote: `git remote add solution https://github.com/LambdaSchool/webapi-i-guided-solution`
+- add this repository as a remote: `git remote add solution https://github.com/LambdaSchool/webapi-ii-guided-solution`
 - pull from this repository's `master` branch into the `solution` branch in your local folder `git pull solution master:solution --force`.
 
 A this point you should have a `master` branch pointing to the student's repository and a `solution` branch with the latest changes added to the solution repository.
