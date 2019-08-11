@@ -196,18 +196,18 @@ req.query = {
 Let's see this in action. Notice this endpoint:
 
 ```js
-router.get('/', async (req, res) => {
-  try {
-    // we are passing req.query to the .find() method of hubs-model
-    const hubs = await Hubs.find(req.query);
+router.get('/', (req, res) => {
+  Hubs.find(req.query)
+  .then(hubs => {
     res.status(200).json(hubs);
-  } catch (error) {
+  })
+  .catch(error => {
     // log error to database
     console.log(error);
     res.status(500).json({
       message: 'Error retrieving the hubs',
     });
-  }
+  });
 });
 ```
 
@@ -245,21 +245,22 @@ When a resource only makes sense within the context of another resource, in REST
 Here's the code:
 
 ```js
-router.get('/:id/messages', async (req, res) => {
-  try {
-    const messages = await Hubs.findHubMessages(req.params.id);
-
+router.get('/:id/messages', (req, res) => {
+  Hubs.findHubMessages(req.params.id)
+  .then(messages => {
     if (messages.length > 0) {
       res.status(200).json(messages);
     } else {
       res.status(404).json({ message: 'No messages for this hub' });
     }
-  } catch (error) {
+  })
+  .catch(error => {
+    // log error to database
     console.log(error);
     res.status(500).json({
       message: 'Error retrieving the messages for this hub',
     });
-  }
+  });
 });
 ```
 
@@ -272,18 +273,19 @@ Ask student to write and endpoint to new message to a hub.
 A possible solution using sub-routes:
 
 ```js
-router.post('/:id/messages', async (req, res) => {
+router.post('/:id/messages', (req, res) => {
   const messageInfo = { ...req.body, hub_id: req.params.id };
-  try {
-    const message = await Hubs.addMessage(messageInfo);
+  Hubs.addMessage(messageInfo)
+  .then(message => {
     res.status(201).json(message);
-  } catch (error) {
+  })
+  .catch(error => {
     // log error to database
     console.log(error);
     res.status(500).json({
       message: 'Error adding the message',
     });
-  }
+  });
 });
 ```
 
@@ -294,22 +296,22 @@ Sometimes the following error displays in the console `Cannot set header after t
 This code suffers from that:
 
 ```js
-router.get('/:id', async (req, res) => {
-  try {
-    const hub = await Hubs.findById(req.params.id);
-
+router.get('/:id', (req, res) => {
+  Hubs.findById(req.params.id)
+  .then(hub => {
     if (hub) {
       res.status(200).json(hub); // forget to add return at the beginning of this line
     }
     // this code tries to modify the response a second time, this is the reason for the error
     res.status(404).json({ message: 'Hub not found' });
-  } catch (error) {
+  })
+  .catch(error => {
     // log error to database
     console.log(error);
     res.status(500).json({
       message: 'Error retrieving the hub',
     });
-  }
+  });
 });
 ```
 
