@@ -1,33 +1,21 @@
 {
-  "name": "webapi-chat-solution",
+  "name": "node-api2-guided-solution",
   "version": "1.0.0",
-  "description": "Guided project for **Web API II** Module",
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LambdaSchool/webapi-chat-solution.git"
+    "url": "git+https://github.com/LambdaSchool/node-api2-guided-solution.git"
   },
-  "keywords": [
-    "backend",
-    "guided",
-    "chat",
-    "lambda",
-    "api"
-  ],
-  "author": "Lambda School",
-  "bugs": {
-    "url": "https://github.com/LambdaSchool/webapi-chat-solution/issues"
-  },
-  "homepage": "https://github.com/LambdaSchool/webapi-chat-solution#readme",
   "devDependencies": {
-    "nodemon": "^1.19.3"
+    "eslint": "^7.14.0",
+    "nodemon": "^2.0.6"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "knex": "^0.19.4",
-    "sqlite3": "^4.1.0"
+    "knex": "^0.21.12",
+    "sqlite3": "^5.0.0"
   }
 }
