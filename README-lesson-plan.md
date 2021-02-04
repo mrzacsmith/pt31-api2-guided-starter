@@ -34,13 +34,13 @@ Next we'll start breaking up the monolithic `index.js` file into separate files 
 
 We start by separating the creation and configuration of our server from starting to listen for requests.
 
-## Exporting Modules the CommonJS Way
+## Preliminaries
 
 - make sure to download all dependencies with `npm i`.
 - use `npm run server` to run the API and visit `/api/adopters` to make sure it's working.
 - explain the structure of the project showing the monolithic `server.js` file.
 - explain the `CommonJS` way of exporting modules and its differences with ES6 modules.
-- test a few endpoitns to confirm the API works.
+- show the functions inside `adopters/adopters-model.js` and explain how they use a real SQLite database.
 
 Next, we'll break the application into sub-applications using Express Routers.
 
