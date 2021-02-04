@@ -38,45 +38,11 @@ We start by separating the creation and configuration of our server from startin
 
 - make sure to download all dependencies with `npm i`.
 - use `npm run server` to run the API and visit `/api/adopters` to make sure it's working.
-- add a new `server.js` file.
-- move the server creation and configuration, including middleware and routes to that file.
-- make sure to export the server at the bottom: `module.exports = server`. Explain that this is the `CommonJS` way of exporting modules.
+- explain the structure of the project showing the monolithic `server.js` file.
+- explain the `CommonJS` way of exporting modules and its differences with ES6 modules.
+- test a few endpoitns to confirm the API works.
 
-```js
-// api/server.js
-const express = require('express');
-
-const server = express();
-
-server.get('/', (req, res) => {
-  res.send(`
-    <h2>Lambda Shelter API</h>
-    <p>Welcome to the Lambda Shelter API</p>
-  `);
-});
-
-// other endpoints go here, omitted for brevity
-
-module.exports = server;
-// this is equivalent to: export default server; for ES2015 modules
-```
-
-- require `api/server.js` into `index.js`.
-
-```js
-// all the content left inside index.js
-const server = require('./api/server.js'); // adjust path depending on folder structure
-
-server.listen(4000, () => {
-  console.log('\n*** Server Running on http://localhost:4000 ***\n');
-});
-```
-
-- test that the the API still works.
-
-**wait for students to catch up, use a `yes/no` poll to let students tell you when they are done**
-
-Nex, we'll break the application into sub-application using Express Routers.
+Next, we'll break the application into sub-applications using Express Routers.
 
 ## Add Adopters Router
 
@@ -220,7 +186,7 @@ Next, let's see how to handles sub-resources by building an endpoint to view all
 
 ## Use sub-routes
 
-When a resource makes sense within the context of another resource, in REST we create a sub-route. For our use case, we are interested in the dogs adopted by a particular adopter:
+When a resource makes sense within the context of another resource, in REST we can create a sub-route. For our use case, we are interested in the dogs adopted by a particular adopter:
 
 ```js
 router.get('/:id/dogs', (req, res) => {
