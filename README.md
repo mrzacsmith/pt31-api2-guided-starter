@@ -1,6 +1,9 @@
-# Starterß
+# Starter
 
-In this project we will learn how to create a very simple Web API using `Node.js` and `Express`, and cover how to use `Express Routers` to break up the application to make it more maintainable.
+- [ ] Fork this repo if you want to have a copy of your work
+- [ ] clone the repo
+
+In this project we will learn how to create a very simple Web API using `Node.js` and `Express`, and cover how to use `Express Routers` to break up the application to make it more maintainable. We will build the server and the routers from scratch.
 
 ## Prerequisites
 
